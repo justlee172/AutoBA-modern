@@ -1030,7 +1030,8 @@ class CodeExecutor:
                                     # 构建可能的正确路径
                                     r1_correct = r1_path.replace(r1_pattern, r1_replacement)
                                     r2_correct = r2_path.replace(r2_pattern, r2_replacement)
-                                    
+# 在启动命令中添加 PYTHONPATH
+CMD sh -c "echo 'Starting backend...' & PYTHONPATH=/app uvicorn backend.main:api --host 0.0.0.0 --port 8000 & echo 'Starting frontend...' & cd frontend && python -m http.server 3000 & wait"                                    
                                     # 检查文件是否存在
                                     if os.path.exists(r1_correct) and os.path.exists(r2_correct):
                                         self._send_output(f"[EXECUTOR] Fixed file paths ({description}): updated command to use {r1_correct} and {r2_correct}", 'info')
@@ -1300,6 +1301,9 @@ class CodeExecutor:
                 # Docker 不可用，尝试使用本地工具
                 self._send_output("[EXECUTOR] Docker not available, checking for local tools...", 'info')
                 
+                # 检查是否在Docker容器内部运行
+                in_docker = os.path.exists('/.dockerenv') or os.environ.get('DOCKER_CONTAINER') == 'true'
+                
                 # 检查是否可以直接执行命令（不依赖conda）
                 try:
                     # 读取脚本内容
@@ -1308,19 +1312,56 @@ class CodeExecutor:
                     
                     self._send_output(f"[EXECUTOR] Script content: {script_content[:200]}...", 'info')
                     
-                    # 尝试直接使用PowerShell执行简单命令
-                    # 对于复杂的生物信息学工具，需要用户先安装
-                    self._send_output("[EXECUTOR] WARNING: Docker is not available and no conda/mamba environment found.", 'error')
-                    self._send_output("[EXECUTOR] Please either:", 'error')
-                    self._send_output("[EXECUTOR]   1. Start Docker Desktop", 'error')
-                    self._send_output("[EXECUTOR]   2. Install Miniconda and create the abc_runtime environment", 'error')
-                    self._send_output("[EXECUTOR]   3. Or install the required bioinformatics tools locally", 'error')
-                    
-                    # 对于演示目的，我们可以尝试直接执行简单的命令
-                    # 但复杂的生物信息学工具需要Docker或conda环境
-                    error_msg = "[EXECUTOR] Cannot execute bioinformatics tools without Docker or conda environment"
-                    self._send_output(error_msg, 'error')
-                    return error_msg
+                    if in_docker:
+                        # 在容器内部运行时，尝试直接执行命令
+                        self._send_output("[EXECUTOR] Running inside Docker container, trying to execute commands directly...", 'info')
+                        
+                        # 执行脚本
+                        process = subprocess.Popen(
+                            ['bash', self.bash_code_path_execute],
+                            stdout=subprocess.PIPE,
+                            stderr=subprocess.PIPE,
+                            text=True,
+                            encoding='utf-8',
+                            errors='replace'
+                        )
+                        
+                        # 实时读取输出
+                        while True:
+                            stdout_line = process.stdout.readline()
+                            stderr_line = process.stderr.readline()
+                            
+                            if not stdout_line and not stderr_line and process.poll() is not None:
+                                break
+                            
+                            if stdout_line:
+                                self._send_output(stdout_line.strip(), 'stdout')
+                            if stderr_line:
+                                self._send_output(stderr_line.strip(), 'stderr')
+                        
+                        # 等待进程完成
+                        process.wait()
+                        
+                        if process.returncode == 0:
+                            self._send_output("[EXECUTOR] Command executed successfully", 'info')
+                            return "Command executed successfully"
+                        else:
+                            error_msg = f"[EXECUTOR] Command failed with return code: {process.returncode}"
+                            self._send_output(error_msg, 'error')
+                            return error_msg
+                    else:
+                        # 非容器环境，需要Docker或conda
+                        self._send_output("[EXECUTOR] WARNING: Docker is not available and no conda/mamba environment found.", 'error')
+                        self._send_output("[EXECUTOR] Please either:", 'error')
+                        self._send_output("[EXECUTOR]   1. Start Docker Desktop", 'error')
+                        self._send_output("[EXECUTOR]   2. Install Miniconda and create the abc_runtime environment", 'error')
+                        self._send_output("[EXECUTOR]   3. Or install the required bioinformatics tools locally", 'error')
+                        
+                        # 对于演示目的，我们可以尝试直接执行简单的命令
+                        # 但复杂的生物信息学工具需要Docker或conda环境
+                        error_msg = "[EXECUTOR] Cannot execute bioinformatics tools without Docker or conda environment"
+                        self._send_output(error_msg, 'error')
+                        return error_msg
                     
                 except Exception as e:
                     self._send_output(f"[EXECUTOR] Error: Failed to execute: {e}", 'error')
