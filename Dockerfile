@@ -12,7 +12,7 @@ RUN rm -f /etc/apt/sources.list.d/debian.sources && \
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     git curl wget bash ca-certificates xz-utils \
-    fastqc trimmomatic spades quast samtools bowtie2 bcftools openjdk-17-jre && \
+    fastqc trimmomatic spades samtools bowtie2 bcftools openjdk-17-jre && \
     rm -rf /var/lib/apt/lists/*
 
 # 安装 Node.js
