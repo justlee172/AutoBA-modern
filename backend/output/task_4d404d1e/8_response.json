@@ -1,0 +1,1 @@
+{"tool": "samtools", "code": "samtools bam2fq /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_4d404d1e/marked_duplicates.bam > /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_4d404d1e/marked_duplicates.fq"}

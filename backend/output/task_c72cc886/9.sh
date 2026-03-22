@@ -1,0 +1,1 @@
+mamba install -y samtools && samtools sort C:\Users\32181\.openclaw\workspace\autoba-modern\backend\output\task_c72cc886\marked_duplicates.bam -o C:\Users\32181\.openclaw\workspace\autoba-modern\backend\output\task_c72cc886\sorted_marked_duplicates.bam

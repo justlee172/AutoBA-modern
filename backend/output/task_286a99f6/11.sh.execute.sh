@@ -1,0 +1,1 @@
+mamba install -y bcftools && bcftools mpileup -f C:\Users\32181\.openclaw\workspace\autoba-modern\backend\output\task_286a99f6\data\Reference.fasta C:\Users\32181\.openclaw\workspace\autoba-modern\backend\output\task_286a99f6\sorted_marked_duplicates.bam | bcftools call -mv -Ov -o C:\Users\32181\.openclaw\workspace\autoba-modern\backend\output\task_286a99f6\variants.vcf

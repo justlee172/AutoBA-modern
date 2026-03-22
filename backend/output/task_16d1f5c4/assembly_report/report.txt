@@ -1,0 +1,45 @@
+All statistics are based on contigs of size >= 1 bp, unless otherwise noted (e.g., "# contigs (>= 0 bp)" and "Total length (>= 0 bp)" include all contigs).
+
+Assembly                       scaffolds 
+# contigs (>= 0 bp)            2         
+# contigs (>= 1000 bp)         0         
+# contigs (>= 5000 bp)         0         
+# contigs (>= 10000 bp)        0         
+# contigs (>= 25000 bp)        0         
+# contigs (>= 50000 bp)        0         
+Total length (>= 0 bp)         70        
+Total length (>= 1000 bp)      0         
+Total length (>= 5000 bp)      0         
+Total length (>= 10000 bp)     0         
+Total length (>= 25000 bp)     0         
+Total length (>= 50000 bp)     0         
+# contigs                      2         
+Largest contig                 36        
+Total length                   70        
+Reference length               4641652   
+GC (%)                         51.43     
+Reference GC (%)               50.79     
+N50                            36        
+NG50                           -         
+N90                            34        
+NG90                           -         
+auN                            35.0      
+auNG                           0.0       
+L50                            1         
+LG50                           -         
+L90                            2         
+LG90                           -         
+# total reads                  200       
+# left                         100       
+# right                        100       
+Mapped (%)                     100.0     
+Reference mapped (%)           0.0       
+Properly paired (%)            0.0       
+Reference properly paired (%)  0.0       
+Avg. coverage depth            102       
+Reference avg. coverage depth  0         
+Coverage >= 1x (%)             51.43     
+Reference coverage >= 1x (%)   0.0       
+# unaligned contigs            2 + 0 part
+Unaligned length               70        
+# N's per 100 kbp              0.00      

@@ -1,0 +1,7 @@
+- "left reads":
+  - "/workspace/output/task_56ff8285/output/R1.fastq"
+  "number": !!int "1"
+  "orientation": "fr"
+  "right reads":
+  - "/workspace/output/task_56ff8285/output/R2.fastq"
+  "type": "paired-end"

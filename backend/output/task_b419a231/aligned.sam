@@ -1,0 +1,7 @@
+@HD	VN:1.0	SO:unsorted
+@SQ	SN:NC_000913.3	LN:4641652
+@PG	ID:bowtie2	PN:bowtie2	VN:2.4.1	CL:"/home/biodocker/bin/bowtie2-align-s --wrapper basic-0 -x /workspace/output/task_b419a231/data/Reference_index -S /workspace/output/task_b419a231/aligned.sam -1 /workspace/output/task_b419a231/data/SRR1234567_R1.fastq.gz -2 /workspace/output/task_b419a231/data/SRR1234567_R2.fastq.gz"
+SRR1234567.1	77	*	0	0	*	*	0	0	AGCTAGCTAGCTAGCTAGCT	FFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+SRR1234567.1	141	*	0	0	*	*	0	0	AGCTAGCTAGCTAGCTAGCT	FFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+SRR1234567.2	77	*	0	0	*	*	0	0	AGCTAGCTAGCTAGCTAGCT	FFFFFFFFFFFFFFFFFFFF	YT:Z:UP
+SRR1234567.2	141	*	0	0	*	*	0	0	AGCTAGCTAGCTAGCTAGCT	FFFFFFFFFFFFFFFFFFFF	YT:Z:UP

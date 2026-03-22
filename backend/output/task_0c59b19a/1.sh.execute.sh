@@ -1,0 +1,1 @@
+mamba install -y bowtie2 && bowtie2-build C:\Users\32181\.openclaw\workspace\autoba-modern\backend\output\task_0c59b19a\data\Reference.fasta C:\Users\32181\.openclaw\workspace\autoba-modern\backend\output\task_0c59b19a\Reference_index

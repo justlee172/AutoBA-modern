@@ -1,0 +1,1 @@
+mamba install -y samtools && samtools sort C:\Users\32181\.openclaw\workspace\autoba-modern\backend\output\task_74771be2\alignments.bam -o C:\Users\32181\.openclaw\workspace\autoba-modern\backend\output\task_74771be2\sorted_alignments.bam

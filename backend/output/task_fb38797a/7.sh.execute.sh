@@ -1,0 +1,1 @@
+mamba install -y samtools && samtools view -bS C:\Users\32181\.openclaw\workspace\autoba-modern\backend\output\task_fb38797a\marked_duplicates.bam > C:\Users\32181\.openclaw\workspace\autoba-modern\backend\output\task_fb38797a\marked_duplicates.sam

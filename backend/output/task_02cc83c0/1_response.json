@@ -1,0 +1,1 @@
+{"tool": "fastqc", "code": "mamba install -y fastqc && fastqc /path/to/SRR1234567_R1.fastq.gz -o /mnt/c/Users/32181/.openclaw/workspace/autoba-modern/backend/output/task_02cc83c0 && fastqc /path/to/SRR1234567_R2.fastq.gz -o /mnt/c/Users/32181/.openclaw/workspace/autoba-modern/backend/output/task_02cc83c0"}

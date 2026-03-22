@@ -1,0 +1,1 @@
+mamba install -y stringtie && stringtie ./examples/case1.1/output/LoGlu_Rep1_2.sam -o ./examples/case1.1/output/LoGlu_Rep1_2.gtf && stringtie ./examples/case1.1/output/HiGlu_Rep1_2.sam -o ./examples/case1.1/output/HiGlu_Rep1_2.gtf

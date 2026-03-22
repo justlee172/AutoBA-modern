@@ -1,0 +1,1 @@
+spades.py -k 21,33,55,77 --meta -1 /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_4d404d1e/trimmed_R1.fastq.gz -2 /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_4d404d1e/trimmed_R2.fastq.gz -o /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_4d404d1e

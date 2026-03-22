@@ -1,0 +1,1 @@
+spades.py -k 21,33,55,77 --meta -1 'C:/Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_54d60081/output/R1.fq' -2 'C:/Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_54d60081/output/R2.fq' -o 'C:/Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_54d60081/output/spades_output'

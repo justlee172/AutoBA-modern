@@ -1,0 +1,4 @@
+@HD	VN:1.3
+@SQ	SN:NODE_1_length_36_cov_1690.000000	LN:36
+@SQ	SN:NODE_2_length_34_cov_1560.000000	LN:34
+@PG	ID:bwa	PN:bwa	CL:/quast-5.3.0/quast_libs/bwa/bwa mem -t 2 /workspace/output/task_16d1f5c4/assembly_report/quast_corrected_input/scaffolds.fasta /workspace/output/task_16d1f5c4/data/SRR1234567_R1.fastq.gz /workspace/output/task_16d1f5c4/data/SRR1234567_R2.fastq.gz	VN:0.7.15-r1140

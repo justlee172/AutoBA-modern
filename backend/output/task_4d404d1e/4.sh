@@ -1,0 +1,1 @@
+samtools sort /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_4d404d1e/alignment.bam -o /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_4d404d1e/sorted_alignment.bam

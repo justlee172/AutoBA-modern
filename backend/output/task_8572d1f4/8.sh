@@ -1,0 +1,1 @@
+samtools view -bS /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_8572d1f4/marked_duplicates.sam > /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_8572d1f4/marked_duplicates.bam

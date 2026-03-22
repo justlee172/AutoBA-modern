@@ -1,0 +1,7 @@
+- "left reads":
+  - "/workspace/output/task_2bfb1da1/marked_duplicates_R1_trimmed_paired.fastq.gz"
+  "number": !!int "1"
+  "orientation": "fr"
+  "right reads":
+  - "/workspace/output/task_2bfb1da1/marked_duplicates_R2_trimmed_paired.fastq.gz"
+  "type": "paired-end"

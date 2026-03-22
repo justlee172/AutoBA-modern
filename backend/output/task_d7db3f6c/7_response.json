@@ -1,0 +1,1 @@
+{"tool": "SAMtools", "code": "mamba install -y samtools && samtools bam2fq C:\\Users\\32181\\.openclaw\\workspace\\autoba-modern\\backend\\output\\task_d7db3f6c\\marked_duplicates.bam | gzip > C:\\Users\\32181\\.openclaw\\workspace\\autoba-modern\\backend\\output\\task_d7db3f6c\\cleaned_R1.fastq.gz"}

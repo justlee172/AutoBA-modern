@@ -1,0 +1,162 @@
+- STAGE: Before start
+  args: []
+  config_dir: ''
+  del_after:
+  - tmp/hammer_uk83g9fe
+  - .bin_reads
+  - tmp/spades_qld3_0bd
+  - configs
+  - tmp/hammer_hx64_rta
+  - .bin_reads
+  - tmp/spades_84at8oxe
+  - configs
+  job_uuid: SPAdes_Before_start_QART6UTI6SWP1WNJB373KE4O4IS0788R
+  mpi_support: false
+  output_files: []
+  path: 'true'
+  short_name: before_start
+- STAGE: Read error correction
+  args: []
+  config_dir: ''
+  del_after: []
+  job_uuid: SPAdes_Read_error_correction_RC5K2D35WKVQ0BP0KW25RN0FNXOWW33W
+  mpi_support: false
+  output_files: []
+  path: 'true'
+  short_name: ec_start
+- STAGE: Read error correction
+  args:
+  - /workspace/output/task_315143b0/spades_output/corrected/configs/config.info
+  config_dir: corrected
+  del_after:
+  - tmp/hammer_7_rj_ihb
+  job_uuid: SPAdes_Read_error_correction_8AJDP1DKUH7TI0Q8UX6IUOWO0J1N6XW4
+  mpi_support: false
+  output_files:
+  - /workspace/output/task_315143b0/spades_output/corrected/corrected.yaml
+  path: /SPAdes-4.2.0-Linux/bin/spades-hammer
+  short_name: ec_runtool
+- STAGE: corrected reads compression
+  args:
+  - /SPAdes-4.2.0-Linux/share/spades/spades_pipeline/scripts/compress_all.py
+  - --input_file
+  - /workspace/output/task_315143b0/spades_output/corrected/corrected.yaml
+  - --ext_python_modules_home
+  - /SPAdes-4.2.0-Linux/share/spades
+  - --max_threads
+  - '16'
+  - --output_dir
+  - /workspace/output/task_315143b0/spades_output/corrected
+  - --gzip_output
+  config_dir: ''
+  del_after: []
+  job_uuid: SPAdes_corrected_reads_compression_R783JOX167X5FPWRTVF170IH0B86I74E
+  mpi_support: false
+  output_files: []
+  path: /usr/bin/python3
+  short_name: ec_compress
+- STAGE: Read error correction
+  args: []
+  config_dir: ''
+  del_after: []
+  job_uuid: SPAdes_Read_error_correction_VH62E0YGXK10X65JTEIC3EQYW9BDW6Y3
+  mpi_support: false
+  output_files: []
+  path: 'true'
+  short_name: ec_finish
+- STAGE: Assembling
+  args: []
+  config_dir: ''
+  del_after: []
+  job_uuid: SPAdes_Assembling_9OW854S2P56UC5Q3BUA18QCKTTNNN2F3
+  mpi_support: false
+  output_files: []
+  path: 'true'
+  short_name: as_start
+- STAGE: K21
+  args:
+  - /workspace/output/task_315143b0/spades_output/K21/configs/config.info
+  config_dir: K21
+  del_after: []
+  job_uuid: hpcSPAdes_K21_EFZ989FG2U1T6N7T8ACW3RRP1PCZT35M
+  mpi_support: true
+  output_files: []
+  path: /SPAdes-4.2.0-Linux/bin/{spades_core}
+  short_name: k21
+- STAGE: K33
+  args:
+  - /workspace/output/task_315143b0/spades_output/K33/configs/config.info
+  config_dir: K33
+  del_after: []
+  job_uuid: hpcSPAdes_K33_AJ5RLFCWWDWMAIJ5VZBAUD5OLHUX1891
+  mpi_support: true
+  output_files: []
+  path: /SPAdes-4.2.0-Linux/bin/{spades_core}
+  short_name: k33
+- STAGE: Copy files
+  args:
+  - /SPAdes-4.2.0-Linux/share/spades/spades_pipeline/scripts/copy_files.py
+  - /workspace/output/task_315143b0/spades_output/K33/before_rr.fasta
+  - /workspace/output/task_315143b0/spades_output/before_rr.fasta
+  - /workspace/output/task_315143b0/spades_output/K33/assembly_graph_after_simplification.gfa
+  - /workspace/output/task_315143b0/spades_output/assembly_graph_after_simplification.gfa
+  - /workspace/output/task_315143b0/spades_output/K33/final_contigs.fasta
+  - /workspace/output/task_315143b0/spades_output/contigs.fasta
+  - /workspace/output/task_315143b0/spades_output/K33/first_pe_contigs.fasta
+  - /workspace/output/task_315143b0/spades_output/first_pe_contigs.fasta
+  - /workspace/output/task_315143b0/spades_output/K33/strain_graph.gfa
+  - /workspace/output/task_315143b0/spades_output/strain_graph.gfa
+  - /workspace/output/task_315143b0/spades_output/K33/scaffolds.fasta
+  - /workspace/output/task_315143b0/spades_output/scaffolds.fasta
+  - /workspace/output/task_315143b0/spades_output/K33/scaffolds.paths
+  - /workspace/output/task_315143b0/spades_output/scaffolds.paths
+  - /workspace/output/task_315143b0/spades_output/K33/assembly_graph_with_scaffolds.gfa
+  - /workspace/output/task_315143b0/spades_output/assembly_graph_with_scaffolds.gfa
+  - /workspace/output/task_315143b0/spades_output/K33/assembly_graph.fastg
+  - /workspace/output/task_315143b0/spades_output/assembly_graph.fastg
+  - /workspace/output/task_315143b0/spades_output/K33/final_contigs.paths
+  - /workspace/output/task_315143b0/spades_output/contigs.paths
+  config_dir: ''
+  del_after:
+  - .bin_reads
+  - tmp/spades_s4xl7se6
+  job_uuid: SPAdes_Copy_files_HAKRXZ9SLUN3P5R79OY48C5J9OOLEG5Q
+  mpi_support: false
+  output_files: []
+  path: /usr/bin/python3
+  short_name: copy_files
+- STAGE: Assembling
+  args: []
+  config_dir: ''
+  del_after: []
+  job_uuid: SPAdes_Assembling_HA09202D70TUKMCTTCBYOMU11F0R1PL7
+  mpi_support: false
+  output_files: []
+  path: 'true'
+  short_name: as_finish
+- STAGE: Breaking scaffolds
+  args:
+  - /SPAdes-4.2.0-Linux/share/spades/spades_pipeline/scripts/breaking_scaffolds_script.py
+  - --result_scaffolds_filename
+  - /workspace/output/task_315143b0/spades_output/scaffolds.fasta
+  - --misc_dir
+  - /workspace/output/task_315143b0/spades_output/misc
+  - --threshold_for_breaking_scaffolds
+  - '3'
+  config_dir: ''
+  del_after: []
+  job_uuid: SPAdes_Breaking_scaffolds_5EIXAM5MN31R9FDUMKZA7BBMG2NOM6OW
+  mpi_support: false
+  output_files: []
+  path: /usr/bin/python3
+  short_name: bs
+- STAGE: Terminate
+  args: []
+  config_dir: ''
+  del_after:
+  - configs
+  job_uuid: SPAdes_Terminate_V48UZ9P6TAKRGVIPS12F4NJ1V1RG9RY1
+  mpi_support: false
+  output_files: []
+  path: 'true'
+  short_name: terminate

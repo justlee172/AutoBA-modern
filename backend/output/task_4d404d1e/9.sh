@@ -1,0 +1,1 @@
+trimmomatic-0.39.jar PE -phred33 /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_4d404d1e/marked_duplicates.fq /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_4d404d1e/marked_duplicates.fq /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_4d404d1e/data/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36

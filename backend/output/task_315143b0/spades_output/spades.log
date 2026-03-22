@@ -1,0 +1,80 @@
+Command line: /SPAdes-4.2.0-Linux/bin/spades.py	-k	21,33,55,77	-1	/workspace/output/task_315143b0/data/SRR1234567_R1.fastq.gz	-2	/workspace/output/task_315143b0/data/SRR1234567_R2.fastq.gz	-o	/workspace/output/task_315143b0/spades_output	
+
+System information:
+  SPAdes version: 4.2.0
+  Python version: 3.10.12
+  OS: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35
+
+Output dir: /workspace/output/task_315143b0/spades_output
+Mode: read error correction and assembling
+Debug mode is turned OFF
+
+Dataset parameters:
+  Standard mode
+  For multi-cell/isolate data we recommend to use '--isolate' option; for single-cell MDA data use '--sc'; for metagenomic data use '--meta'; for RNA-Seq use '--rna'.
+  Reads:
+    Library number: 1, library type: paired-end
+      orientation: fr
+      left reads: ['/workspace/output/task_315143b0/data/SRR1234567_R1.fastq.gz']
+      right reads: ['/workspace/output/task_315143b0/data/SRR1234567_R2.fastq.gz']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+Read error correction parameters:
+  Iterations: 1
+  PHRED offset will be auto-detected
+  Corrected reads will be compressed
+Assembly parameters:
+  k: [21, 33, 55, 77]
+  Repeat resolution is enabled
+  Mismatch careful mode is turned OFF
+  MismatchCorrector will be SKIPPED
+  Coverage cutoff is turned OFF
+  Assembly graph output will use GFA v1.2 format
+Other parameters:
+  Dir for temp files: /workspace/output/task_315143b0/spades_output/tmp
+  Threads: 16
+  Memory limit (in Gb): 7
+
+
+======= SPAdes pipeline started. Log can be found here: /workspace/output/task_315143b0/spades_output/spades.log
+
+/workspace/output/task_315143b0/data/SRR1234567_R1.fastq.gz: max reads length: 50
+/workspace/output/task_315143b0/data/SRR1234567_R2.fastq.gz: max reads length: 50
+
+Reads length: 50
+
+K-mer sizes were set to [21, 33] because estimated read length (50) is less than 77
+
+===== Before start started. 
+
+
+===== Read error correction started. 
+
+
+===== Read error correction started. 
+
+
+== Running: /SPAdes-4.2.0-Linux/bin/spades-hammer /workspace/output/task_315143b0/spades_output/corrected/configs/config.info
+
+  0:00:00.000     1M / 18M   INFO    General                 (main.cpp                  :  76)   Starting BayesHammer, built from N/A, git revision 7fee3c1050a732faef8a0d93d70861015a96f44e
+  0:00:00.006     1M / 18M   INFO    General                 (main.cpp                  :  77)   Loading config from "/workspace/output/task_315143b0/spades_output/corrected/configs/config.info"
+  0:00:00.018     1M / 18M   INFO    General                 (main.cpp                  :  79)   Maximum # of threads to use (adjusted due to OMP capabilities): 16
+  0:00:00.020     1M / 18M   INFO    General                 (memory_limit.cpp          :  55)   Memory limit set to 7 Gb
+  0:00:00.021     1M / 18M   INFO    General                 (main.cpp                  :  87)   Trying to determine PHRED offset
+  0:00:00.023     1M / 18M   ERROR   General                 (main.cpp                  :  90)   Failed to determine offset! Specify it manually and restart, please!
+
+
+== Error ==  system call for: "['/SPAdes-4.2.0-Linux/bin/spades-hammer', '/workspace/output/task_315143b0/spades_output/corrected/configs/config.info']" finished abnormally, OS return value: 255
+None
+
+In case you have troubles running SPAdes, you can report an issue on our GitHub repository github.com/ablab/spades
+Please provide us with params.txt and spades.log files from the output directory.
+
+SPAdes log can be found here: /workspace/output/task_315143b0/spades_output/spades.log
+
+Thank you for using SPAdes! If you use it in your research, please cite:
+
+  Prjibelski, A., Antipov, D., Meleshko, D., Lapidus, A. and Korobeynikov, A., 2020. Using SPAdes de novo assembler. Current protocols in bioinformatics, 70(1), p.e102.
+  doi.org/10.1002/cpbi.102
+

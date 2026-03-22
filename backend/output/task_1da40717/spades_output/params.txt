@@ -1,0 +1,37 @@
+Command line: /SPAdes-3.15.5-Linux/bin/spades.py	-k	21,33,55	--phred-offset	33	-1	/workspace/output/task_1da40717/marked_duplicates_R1.fq	-2	/workspace/output/task_1da40717/marked_duplicates_R2.fq	-o	/workspace/output/task_1da40717/spades_output	
+
+System information:
+  SPAdes version: 3.15.5
+  Python version: 3.8.10
+  OS: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.29
+
+Output dir: /workspace/output/task_1da40717/spades_output
+Mode: read error correction and assembling
+Debug mode is turned OFF
+
+Dataset parameters:
+  Standard mode
+  For multi-cell/isolate data we recommend to use '--isolate' option; for single-cell MDA data use '--sc'; for metagenomic data use '--meta'; for RNA-Seq use '--rna'.
+  Reads:
+    Library number: 1, library type: paired-end
+      orientation: fr
+      left reads: ['/workspace/output/task_1da40717/marked_duplicates_R1.fq']
+      right reads: ['/workspace/output/task_1da40717/marked_duplicates_R2.fq']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+Read error correction parameters:
+  Iterations: 1
+  PHRED offset: 33
+  Corrected reads will be compressed
+Assembly parameters:
+  k: [21, 33, 55]
+  Repeat resolution is enabled
+  Mismatch careful mode is turned OFF
+  MismatchCorrector will be SKIPPED
+  Coverage cutoff is turned OFF
+Other parameters:
+  Dir for temp files: /workspace/output/task_1da40717/spades_output/tmp
+  Threads: 16
+  Memory limit (in Gb): 7
+

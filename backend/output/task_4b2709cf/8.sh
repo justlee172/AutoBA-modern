@@ -1,0 +1,1 @@
+samtools bam2fq /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_4b2709cf/marked_duplicates.bam -1 /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_4b2709cf/unpaired_R1.fastq -2 /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_4b2709cf/unpaired_R2.fastq

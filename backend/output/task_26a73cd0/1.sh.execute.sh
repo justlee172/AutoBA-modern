@@ -1,0 +1,1 @@
+bowtie2-build C:\Users\32181\.openclaw\workspace\autoba-modern\backend\output\task_26a73cd0\data\Reference.fasta C:\Users\32181\.openclaw\workspace\autoba-modern\backend\output\task_26a73cd0\Reference_index

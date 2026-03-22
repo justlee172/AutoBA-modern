@@ -1,0 +1,1 @@
+mamba install -y quast && quast.py -o /Users/32181/.openclaw/workspace/autoba-modern/backend/output/task_6cca3bef/assembly_report /Users/32181/.openclaw/workspace/autoba-modern/backend/output/task_6cca3bef/scaffolds.fasta

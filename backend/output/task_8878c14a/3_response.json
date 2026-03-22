@@ -1,0 +1,1 @@
+{"tool": "samtools", "code": "samtools view -bS /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_8878c14a/alignment.sam > /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_8878c14a/alignment.bam"}

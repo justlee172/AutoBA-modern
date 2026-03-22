@@ -1,0 +1,1 @@
+{"tool": "FastQC", "code": "mamba install -y fastqc && fastqc ./examples/case1.1/data/SRR1374921.fastq.gz && fastqc ./examples/case1.1/data/SRR1374922.fastq.gz && fastqc ./examples/case1.1/data/SRR1374923.fastq.gz && fastqc ./examples/case1.1/data/SRR1374924.fastq.gz && mv *.zip ./examples/case1.1/output/ && mv *.txt ./examples/case1.1/output/"}

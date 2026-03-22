@@ -1,0 +1,1 @@
+java -jar /usr/bin/picard.jar MarkDuplicates I=/Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_2bfb1da1/sorted_alignments.bam O=/Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_2bfb1da1/marked_duplicates.bam M=/Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_2bfb1da1/duplicates.metrics

@@ -1,0 +1,1 @@
+samtools bam2fq 'C:/Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_54d60081/output/deduped_alignment.bam' > 'C:/Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_54d60081/output/R1.fq' 2> 'C:/Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_54d60081/output/R2.fq'

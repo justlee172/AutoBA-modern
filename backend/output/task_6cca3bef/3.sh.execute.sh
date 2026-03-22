@@ -1,0 +1,1 @@
+mamba install -y samtools && samtools view -bS /Users/32181/.openclaw/workspace/autoba-modern/backend/output/task_6cca3bef/alignments.sam > /Users/32181/.openclaw/workspace/autoba-modern/backend/output/task_6cca3bef/alignments.bam
