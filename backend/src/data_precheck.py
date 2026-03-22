@@ -188,8 +188,15 @@ class DataPrecheck:
             else:
                 results[file_path] = {'status': True, 'message': '文件类型不检查', 'type': 'other'}
         
-        # 检查并设置Docker环境
-        docker_status, docker_message = DataPrecheck.setup_docker_environment()
-        results['docker'] = {'status': docker_status, 'message': docker_message, 'type': 'docker'}
+        # 检查是否在Docker容器内部运行
+        in_docker = os.path.exists('/.dockerenv') or os.environ.get('DOCKER_CONTAINER') == 'true'
+        
+        if not in_docker:
+            # 只有在容器外部运行时才检查Docker环境
+            docker_status, docker_message = DataPrecheck.setup_docker_environment()
+            results['docker'] = {'status': docker_status, 'message': docker_message, 'type': 'docker'}
+        else:
+            # 在容器内部运行时，跳过Docker检查
+            results['docker'] = {'status': True, 'message': '在Docker容器内部运行，跳过Docker检查', 'type': 'docker'}
         
         return results
