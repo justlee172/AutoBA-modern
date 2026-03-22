@@ -28,7 +28,8 @@ RUN pip install --no-cache-dir -i https://mirrors.aliyun.com/pypi/simple/ -r req
 
 RUN mkdir -p uploads
 
-EXPOSE 8000 3000
+# 暴露 8004 端口（与 main.py 中设置的端口一致）
+EXPOSE 8004
 
 # 直接运行 main.py 文件
-CMD sh -c "echo 'Starting backend...' & cd backend && python main.py & echo 'Starting frontend...' & cd ../frontend && python -m http.server 3000 & wait"
+CMD sh -c "echo 'Starting backend...' & cd backend && python main.py"
