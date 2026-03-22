@@ -1,5 +1,6 @@
 FROM python:3.10-slim-bookworm
 
+# 设置工作目录
 WORKDIR /app
 
 # 阿里云源 + 基础工具
@@ -19,12 +20,15 @@ RUN curl -L -o /tmp/node.tar.xz "https://nodejs.org/dist/v20.11.1/node-v20.11.1-
     rm /tmp/node.tar.xz && \
     node --version && npm --version
 
+# 复制项目文件
+COPY . .
+
 # pip 安装依赖（无 mamba）
-COPY requirements.txt .
 RUN pip install --no-cache-dir -i https://mirrors.aliyun.com/pypi/simple/ -r requirements.txt
 
 RUN mkdir -p uploads
 
 EXPOSE 8000 3000
 
-CMD sh -c "echo 'Starting backend...' & uvicorn backend.main:api --host 0.0.0.0 --port 8000 & echo 'Starting frontend...' & cd frontend && python -m http.server 3000 & wait"
+# 直接运行 main.py 文件
+CMD sh -c "echo 'Starting backend...' & cd backend && python main.py & echo 'Starting frontend...' & cd ../frontend && python -m http.server 3000 & wait"
