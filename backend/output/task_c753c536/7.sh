@@ -1,0 +1,1 @@
+samtools view -bS D:\googledown\AutoBA-modern-main\AutoBA-modern-main\backend\output\task_c753c536\marked_duplicates.bam > D:\googledown\AutoBA-modern-main\AutoBA-modern-main\backend\output\task_c753c536\marked_duplicates.sam

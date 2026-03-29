@@ -1,0 +1,1 @@
+fastqc /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_6c69e1c7/data/SRR1234567_R1.fastq.gz /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_6c69e1c7/data/SRR1234567_R2.fastq.gz

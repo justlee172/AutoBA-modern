@@ -1,0 +1,1 @@
+samtools index /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_2bfb1da1/sorted_alignments.bam

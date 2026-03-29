@@ -1,0 +1,1 @@
+mamba install -y spades && spades.py -k 21,33,55 -1 C:\Users\32181\.openclaw\workspace\autoba-modern\backend\output\task_74771be2\marked_duplicates.fq -2 C:\Users\32181\.openclaw\workspace\autoba-modern\backend\output\task_74771be2\marked_duplicates.fq -o C:\Users\32181\.openclaw\workspace\autoba-modern\backend\output\task_74771be2\spades_output

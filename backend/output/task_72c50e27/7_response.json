@@ -1,0 +1,1 @@
+{"tool": "SAMtools", "code": "samtools view -bS /Users/32181/.openclaw/workspace/autoba-modern/backend/output/task_72c50e27/marked_duplicates.bam > /Users/32181/.openclaw/workspace/autoba-modern/backend/output/task_72c50e27/marked_duplicates.sam"}

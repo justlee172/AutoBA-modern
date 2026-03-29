@@ -1,0 +1,26 @@
+/quast-5.3.0/quast.py -o /workspace/output/task_2bfb1da1/assembly_report /workspace/output/task_2bfb1da1/scaffolds.fasta
+
+Version: 5.3.0
+
+System information:
+  OS: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35 (linux_64)
+  Python version: 3.10.12
+  CPUs number: 16
+
+Started: 2026-03-22 06:24:43
+
+Logging to /workspace/output/task_2bfb1da1/assembly_report/quast.log
+NOTICE: Output directory already exists and looks like a QUAST output dir. Existing results can be reused (e.g. previously generated alignments)!
+NOTICE: Maximum number of threads is set to 4 (use --threads option to set it manually)
+
+CWD: /workspace
+Main parameters: 
+  MODE: default, threads: 4, min contig length: 500, min alignment length: 65, min alignment IDY: 95.0, \
+  ambiguity: one, min local misassembly length: 200, min extensive misassembly length: 1000
+
+Contigs:
+  Pre-processing...
+WARNING: Skipping scaffolds because it doesn't contain contigs >= 500 bp.
+
+
+ERROR! None of the assembly files contains correct contigs. Please, provide different files or decrease --min-contig threshold.

@@ -1,0 +1,1 @@
+bowtie2-build 'C:/Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_170d4338/data/Reference.fasta' 'C:/Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_170d4338/data/Reference'

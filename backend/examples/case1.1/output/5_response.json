@@ -1,0 +1,1 @@
+{"tool": "ballgown", "code": "mamba install -y ballgown && Rscript -e 'library(ballgown); dataDir <- \"./examples/case1.1/output\"); samples <- list.files(dataDir, full.names = TRUE, pattern = \"*.gtf\"); ballgownProject <- ballgown(dataDir, samples); plot(ballgownProject); ballgownProject@results"}

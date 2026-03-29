@@ -1,0 +1,1 @@
+quast.py -o /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_2bfb1da1/assembly_report /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_2bfb1da1/scaffolds.fasta

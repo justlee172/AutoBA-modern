@@ -1,0 +1,1 @@
+{"tool": "quast.py", "code": "quast.py -o /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_4d404d1e/assembly_report /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_4d404d1e/scaffolds.fasta"}

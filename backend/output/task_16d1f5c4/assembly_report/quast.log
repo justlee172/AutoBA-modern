@@ -1,0 +1,215 @@
+/quast-5.3.0/quast.py -1 /workspace/output/task_16d1f5c4/data/SRR1234567_R1.fastq.gz -2 /workspace/output/task_16d1f5c4/data/SRR1234567_R2.fastq.gz -r /workspace/output/task_16d1f5c4/data/Reference.fasta -o /workspace/output/task_16d1f5c4/assembly_report --min-contig 1 /workspace/output/task_16d1f5c4/scaffolds.fasta
+
+Version: 5.3.0
+
+System information:
+  OS: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35 (linux_64)
+  Python version: 3.10.12
+  CPUs number: 16
+
+Started: 2026-03-22 06:54:35
+
+Logging to /workspace/output/task_16d1f5c4/assembly_report/quast.log
+NOTICE: Maximum number of threads is set to 4 (use --threads option to set it manually)
+
+CWD: /workspace
+Main parameters: 
+  MODE: default, threads: 4, min contig length: 1, min alignment length: 65, min alignment IDY: 95.0, \
+  ambiguity: one, min local misassembly length: 200, min extensive misassembly length: 1000
+
+Reference:
+  /workspace/output/task_16d1f5c4/data/Reference.fasta ==> Reference
+
+Contigs:
+  Pre-processing...
+  /workspace/output/task_16d1f5c4/scaffolds.fasta ==> scaffolds
+
+2026-03-22 06:54:37
+Running Reads analyzer...
+
+NOTICE: Improper read names in /workspace/output/task_16d1f5c4/data/SRR1234567_R1.fastq.gz (forward reads)! Names should end with /1 (for forward reads) or /2 (for reverse reads) but @SRR1234567.1 was found!
+QUAST will attempt to fix read names.
+
+NOTICE: Improper read names in /workspace/output/task_16d1f5c4/data/SRR1234567_R2.fastq.gz (reverse reads)! Names should end with /1 (for forward reads) or /2 (for reverse reads) but @SRR1234567.1 was found!
+QUAST will attempt to fix read names.
+  Logging to files /workspace/output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.log and /workspace/output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err...
+  Pre-processing reads...
+  Running BWA...
+/quast-5.3.0/quast_libs/bwa/bwa index -p /workspace/output/task_16d1f5c4/assembly_report/quast_corrected_input/scaffolds.fasta \
+/workspace/output/task_16d1f5c4/assembly_report/quast_corrected_input/scaffolds.fasta \
+>> /workspace/output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err 2>> \
+/workspace/output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+/quast-5.3.0/quast_libs/bwa/bwa mem -t 2 /workspace/output/task_16d1f5c4/assembly_report/quast_corrected_input/scaffolds.fasta \
+/workspace/output/task_16d1f5c4/data/SRR1234567_R1.fastq.gz /workspace/output/task_16d1f5c4/data/SRR1234567_R2.fastq.gz \
+> scaffolds.pe1.sam 2>> /workspace/output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+/quast-5.3.0/quast_libs/sambamba/sambamba_linux view -t 2 -h -S -f bam scaffolds.pe1.sam \
+> scaffolds.pe1.bam 2>> /workspace/output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+/quast-5.3.0/quast_libs/sambamba/sambamba_linux markdup -r -t 2 --tmpdir /workspace/output/task_16d1f5c4/assembly_report/reads_stats \
+scaffolds.pe1.bam scaffolds.pe1.dedup.bam 2>> /workspace/output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+  Pre-processing reads...
+  Running BWA for reference...
+/quast-5.3.0/quast_libs/bwa/bwa index -p /workspace/output/task_16d1f5c4/assembly_report/quast_corrected_input/Reference.fasta \
+/workspace/output/task_16d1f5c4/assembly_report/quast_corrected_input/Reference.fasta \
+>> /workspace/output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err 2>> \
+/workspace/output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+  Done.
+/quast-5.3.0/quast_libs/sambamba/sambamba_linux view -H -S output/task_16d1f5c4/assembly_report/reads_stats/temp_output/scaffolds.sam \
+> output/task_16d1f5c4/assembly_report/reads_stats/scaffolds.sam.header 2>> output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+  Sorting SAM-file...
+/quast-5.3.0/quast_libs/sambamba/sambamba_linux view -t 2 -h -S -f bam output/task_16d1f5c4/assembly_report/reads_stats/temp_output/scaffolds.all.correct.sam \
+> output/task_16d1f5c4/assembly_report/reads_stats/temp_output/scaffolds.bam 2>> output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+/quast-5.3.0/quast_libs/sambamba/sambamba_linux flagstat -t 2 output/task_16d1f5c4/assembly_report/reads_stats/temp_output/scaffolds.bam \
+> output/task_16d1f5c4/assembly_report/reads_stats/scaffolds.stat 2>> output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+/quast-5.3.0/quast_libs/bedtools/bin/bedtools bamtobed -i output/task_16d1f5c4/assembly_report/reads_stats/temp_output/scaffolds.bam \
+> output/task_16d1f5c4/assembly_report/reads_stats/temp_output/scaffolds.bed 2>> output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+sort -k1,1 -k2,2n output/task_16d1f5c4/assembly_report/reads_stats/temp_output/scaffolds.bed \
+> output/task_16d1f5c4/assembly_report/reads_stats/temp_output/scaffolds.sorted.bed \
+2>> output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+/quast-5.3.0/quast_libs/bedtools/bin/bedtools genomecov -i output/task_16d1f5c4/assembly_report/reads_stats/temp_output/scaffolds.sorted.bed \
+-g output/task_16d1f5c4/assembly_report/quast_corrected_input/scaffolds.fasta.fai \
+> output/task_16d1f5c4/assembly_report/reads_stats/temp_output/scaffolds.genomecov \
+2>> output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+  Analysis is finished.
+/quast-5.3.0/quast_libs/bwa/bwa mem -t 2 /workspace/output/task_16d1f5c4/assembly_report/quast_corrected_input/Reference.fasta \
+/workspace/output/task_16d1f5c4/data/SRR1234567_R1.fastq.gz /workspace/output/task_16d1f5c4/data/SRR1234567_R2.fastq.gz \
+> Reference.pe1.sam 2>> /workspace/output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+/quast-5.3.0/quast_libs/sambamba/sambamba_linux view -t 2 -h -S -f bam Reference.pe1.sam \
+> Reference.pe1.bam 2>> /workspace/output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+/quast-5.3.0/quast_libs/sambamba/sambamba_linux markdup -r -t 2 --tmpdir /workspace/output/task_16d1f5c4/assembly_report/reads_stats \
+Reference.pe1.bam Reference.pe1.dedup.bam 2>> /workspace/output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+  Done.
+/quast-5.3.0/quast_libs/sambamba/sambamba_linux view -H -S output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference.sam \
+> output/task_16d1f5c4/assembly_report/reads_stats/Reference.sam.header 2>> output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+  Sorting SAM-file for reference...
+/quast-5.3.0/quast_libs/sambamba/sambamba_linux view -t 2 -h -S -f bam output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference.all.correct.sam \
+> output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference.bam 2>> output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+/quast-5.3.0/quast_libs/sambamba/sambamba_linux flagstat -t 2 output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference.bam \
+> output/task_16d1f5c4/assembly_report/reads_stats/Reference.stat 2>> output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+/quast-5.3.0/quast_libs/bedtools/bin/bedtools bamtobed -i output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference.bam \
+> output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference.bed 2>> output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+sort -k1,1 -k2,2n output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference.bed \
+> output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference.sorted.bed \
+2>> output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+/quast-5.3.0/quast_libs/bedtools/bin/bedtools genomecov -i output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference.sorted.bed \
+-g output/task_16d1f5c4/assembly_report/quast_corrected_input/Reference.fasta.fai \
+> output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference.genomecov \
+2>> output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+  Analysis for reference is finished.
+  BWA: nothing aligned for reference.
+  Creating total report...
+    saved to /workspace/output/task_16d1f5c4/assembly_report/reads_stats/reads_report.txt, reads_report.tsv, and reads_report.tex
+/quast-5.3.0/quast_libs/sambamba/sambamba_linux view -t 4 -h -f bam -F not unmapped \
+output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference.bam > output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference.mapped.bam \
+2>> output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+/quast-5.3.0/quast_libs/sambamba/sambamba_linux sort -t 4 --tmpdir output/task_16d1f5c4/assembly_report/reads_stats/temp_output \
+-m 2GB -o output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference.mapped.sorted.bam \
+output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference.mapped.bam \
+2>> output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+/quast-5.3.0/quast_libs/sambamba/sambamba_linux view -t 4 -h output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference.mapped.sorted.bam \
+> output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference.all.correct.sorted.sam \
+2>> output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+  Calculating reads coverage...
+/quast-5.3.0/quast_libs/bedtools/bin/bedtools genomecov -ibam output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference.mapped.sorted.bam \
+-g output/task_16d1f5c4/assembly_report/quast_corrected_input/Reference.fasta.fai \
+-bga > output/task_16d1f5c4/assembly_report/reads_stats/Reference.cov_raw 2>> output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+  Calculating physical coverage...
+/quast-5.3.0/quast_libs/sambamba/sambamba_linux view -t 4 -h -f bam -F proper_pair and not supplementary and not duplicate and template_length > -1000 and template_length < 1000 \
+output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference.bam > output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference.physical.bam \
+2>> output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+/quast-5.3.0/quast_libs/sambamba/sambamba_linux sort -t 4 --tmpdir output/task_16d1f5c4/assembly_report/reads_stats/temp_output \
+-m 2GB -o output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference.physical.sorted.bam \
+output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference.physical.bam \
+-n 2>> output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+/quast-5.3.0/quast_libs/bedtools/bin/bedtools bamtobed -i output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference.physical.sorted.bam \
+-bedpe > output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference.physical.bedpe \
+2>> output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+sort -k1,1 -k2,2n output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference.physical.bed \
+> output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference.physical.sorted.bed \
+2>> output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+/quast-5.3.0/quast_libs/bedtools/bin/bedtools genomecov -i output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference.physical.sorted.bed \
+-g output/task_16d1f5c4/assembly_report/quast_corrected_input/Reference.fasta.fai \
+-bga > output/task_16d1f5c4/assembly_report/reads_stats/Reference.physical.raw.cov \
+2>> output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+  Looking for trivial deletions (long zero-covered fragments)...
+  Trivial deletions: 0 found
+    Saving to: /workspace/output/task_16d1f5c4/assembly_report/reads_stats/temp_output/trivial_deletions.bed
+  Searching structural variations with GRIDSS...
+java -ea -Xmx2g -Dsamjdk.create_index=true -Dsamjdk.use_async_io_read_samtools=true \
+-Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=true \
+-cp /quast-5.3.0/quast_libs/gridss/gridss-1.4.1.jar gridss.CallVariants I=/workspace/output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference.mapped.sorted.bam \
+O=/workspace/output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference_gridss/Reference.vcf \
+ASSEMBLY=/workspace/output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference_gridss/Reference.gridss.bam \
+R=/workspace/output/task_16d1f5c4/assembly_report/quast_corrected_input/Reference.fasta \
+WORKER_THREADS=4 WORKING_DIR=/workspace/output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference_gridss \
+2>> output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+java -cp /quast-5.3.0/quast_libs/gridss/gridss-1.4.1.jar au.edu.wehi.idsv.VcfBreakendToBedpe \
+I=/workspace/output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference_gridss/Reference.vcf \
+O=/workspace/output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference_structural_variations.raw.bed \
+OF=/workspace/output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference_structural_variations.filtered.bed \
+R=/workspace/output/task_16d1f5c4/assembly_report/quast_corrected_input/Reference.fasta \
+INCLUDE_HEADER=TRUE 2>> output/task_16d1f5c4/assembly_report/reads_stats/reads_stats.err
+    Saving to: /workspace/output/task_16d1f5c4/assembly_report/reads_stats/temp_output/Reference_structural_variations.bed
+  Structural variations are in /workspace/output/task_16d1f5c4/assembly_report/reads_stats/Reference.bed
+  Coverage distribution along the reference genome is in /workspace/output/task_16d1f5c4/assembly_report/reads_stats/Reference.cov
+Done.
+
+2026-03-22 06:54:45
+Running Basic statistics processor...
+  Reference genome:
+    Reference.fasta, length = 4641652, num fragments = 1, GC % = 50.79
+  Contig files: 
+    scaffolds
+  Calculating N50 and L50...
+    scaffolds, N50 = 36, L50 = 1, auN = 35.0, Total length = 70, GC % = 51.43, # N's per 100 kbp =  0.00
+  Drawing Nx plot...
+    saved to /workspace/output/task_16d1f5c4/assembly_report/basic_stats/Nx_plot.pdf
+  Drawing NGx plot...
+    saved to /workspace/output/task_16d1f5c4/assembly_report/basic_stats/NGx_plot.pdf
+  Drawing cumulative plot...
+    saved to /workspace/output/task_16d1f5c4/assembly_report/basic_stats/cumulative_plot.pdf
+  Drawing GC content plot...
+    saved to /workspace/output/task_16d1f5c4/assembly_report/basic_stats/GC_content_plot.pdf
+  Drawing scaffolds GC content plot...
+    saved to /workspace/output/task_16d1f5c4/assembly_report/basic_stats/scaffolds_GC_content_plot.pdf
+  Drawing Coverage histogram (bin size: 39x)...
+    saved to /workspace/output/task_16d1f5c4/assembly_report/basic_stats/coverage_histogram.pdf
+  Drawing scaffolds coverage histogram (bin size: 39x)...
+    saved to /workspace/output/task_16d1f5c4/assembly_report/basic_stats/scaffolds_coverage_histogram.pdf
+Done.
+
+2026-03-22 06:54:47
+Running Contig analyzer...
+  scaffolds
+  Logging to files /workspace/output/task_16d1f5c4/assembly_report/contigs_reports/contigs_report_scaffolds.stdout and contigs_report_scaffolds.stderr...
+  Aligning contigs to the reference
+  /quast-5.3.0/quast_libs/minimap2/minimap2 -c -x asm10 -B5 -O4,16 --no-long-join \
+  -r 200 -N 50 -s 65 -z 200 --mask-level 0.9 --min-occ 200 -g 2500 --score-N 2 --cs \
+  -t 4 output/task_16d1f5c4/assembly_report/quast_corrected_input/Reference.fasta \
+  output/task_16d1f5c4/assembly_report/quast_corrected_input/scaffolds.fasta > output/task_16d1f5c4/assembly_report/contigs_reports/minimap_output/scaffolds.coords_tmp \
+  2>> output/task_16d1f5c4/assembly_report/contigs_reports/contigs_report_scaffolds.stderr
+  Nothing aligned for 'scaffolds'.
+Failed aligning the contigs for all the assemblies. Only basic stats are going to be evaluated.
+
+NOTICE: Genes are not predicted by default. Use --gene-finding or --glimmer option to enable it.
+
+2026-03-22 06:54:48
+Creating large visual summaries...
+This may take a while: press Ctrl-C to skip this step..
+  1 of 2: Creating PDF with all tables and plots...
+  2 of 2: Creating Icarus viewers...
+Done
+
+2026-03-22 06:54:49
+RESULTS:
+  Text versions of total report are saved to /workspace/output/task_16d1f5c4/assembly_report/report.txt, report.tsv, and report.tex
+  Text versions of transposed total report are saved to /workspace/output/task_16d1f5c4/assembly_report/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
+  HTML version (interactive tables and plots) is saved to /workspace/output/task_16d1f5c4/assembly_report/report.html
+  PDF version (tables and plots) is saved to /workspace/output/task_16d1f5c4/assembly_report/report.pdf
+  Icarus (contig browser) is saved to /workspace/output/task_16d1f5c4/assembly_report/icarus.html
+  Log is saved to /workspace/output/task_16d1f5c4/assembly_report/quast.log
+
+Finished: 2026-03-22 06:54:49
+Elapsed time: 0:00:13.993799
+NOTICEs: 4; WARNINGs: 0; non-fatal ERRORs: 0
+
+Thank you for using QUAST!

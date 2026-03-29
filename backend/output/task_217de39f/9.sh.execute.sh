@@ -1,0 +1,1 @@
+samtools sort /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_217de39f/marked_duplicates.bam -o /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_217de39f/sorted_marked_duplicates.bam

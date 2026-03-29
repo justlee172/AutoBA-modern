@@ -1,0 +1,1 @@
+{"tool": "samtools", "code": "mamba install -y samtools && samtools sort C:\\Users\\32181\\.openclaw\\workspace\\autoba-modern\\backend\\output\\task_9c080be4\\alignments.bam -o C:\\Users\\32181\\.openclaw\\workspace\\autoba-modern\\backend\\output\\task_9c080be4\\sorted_alignments.bam"}

@@ -1,0 +1,1 @@
+samtools view -bS D:\googledown\AutoBA-modern-main\AutoBA-modern-main\backend\output\task_a9d6bc97\alignment.sam > D:\googledown\AutoBA-modern-main\AutoBA-modern-main\backend\output\task_a9d6bc97\alignment.bam

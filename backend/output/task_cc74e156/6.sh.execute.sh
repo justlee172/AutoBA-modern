@@ -1,0 +1,1 @@
+picard MarkDuplicates I=D:\googledown\AutoBA-modern-main\AutoBA-modern-main\backend\output\task_cc74e156\sorted_alignment.bam O=D:\googledown\AutoBA-modern-main\AutoBA-modern-main\backend\output\task_cc74e156\marked_duplicates.bam M=D:\googledown\AutoBA-modern-main\AutoBA-modern-main\backend\output\task_cc74e156\duplicate_metrics.txt

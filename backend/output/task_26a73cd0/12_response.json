@@ -1,0 +1,1 @@
+{"tool": "quast", "code": "mamba install -y -c bioconda quast && quast.py -o /Users/32181/.openclaw/workspace/autoba-modern/backend/output/task_26a73cd0/assembly_report /Users/32181/.openclaw/workspace/autoba-modern/backend/output/task_26a73cd0/scaffolds.fasta"}

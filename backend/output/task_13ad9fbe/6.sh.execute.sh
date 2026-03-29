@@ -1,0 +1,1 @@
+mamba install -y picard && java -jar picard.jar MarkDuplicates I=C:\Users\32181\.openclaw\workspace\autoba-modern\backend\output\task_13ad9fbe\sorted_alignment.bam O=C:\Users\32181\.openclaw\workspace\autoba-modern\backend\output\task_13ad9fbe\marked_duplicates.bam M=C:\Users\32181\.openclaw\workspace\autoba-modern\backend\output\task_13ad9fbe\duplicate_metrics.txt

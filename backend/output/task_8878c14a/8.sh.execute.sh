@@ -1,0 +1,1 @@
+samtools bam2fq /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_8878c14a/marked_duplicates.bam > /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_8878c14a/marked_duplicates.fq

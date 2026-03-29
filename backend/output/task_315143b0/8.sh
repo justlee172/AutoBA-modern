@@ -1,0 +1,1 @@
+mamba install -y samtools && samtools fastq /Users/32181/.openclaw/workspace/autoba-modern/backend/output/task_315143b0/marked_duplicates.sam > /Users/32181/.openclaw/workspace/autoba-modern/backend/output/task_315143b0/marked_duplicates.fq

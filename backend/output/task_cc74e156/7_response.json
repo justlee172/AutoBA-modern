@@ -1,0 +1,1 @@
+{"tool": "samtools", "code": "samtools view -bS D:\\googledown\\AutoBA-modern-main\\AutoBA-modern-main\\backend\\output\\task_cc74e156\\marked_duplicates.bam > D:\\googledown\\AutoBA-modern-main\\AutoBA-modern-main\\backend\\output\\task_cc74e156\\deduped_alignment.bam"}

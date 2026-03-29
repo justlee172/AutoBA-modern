@@ -1,0 +1,1 @@
+{"tool": "SAMtools", "code": "mamba install -y samtools && samtools view -bS /Users/32181/.openclaw/workspace/autoba-modern/backend/output/task_315143b0/alignments.sam > /Users/32181/.openclaw/workspace/autoba-modern/backend/output/task_315143b0/alignments.bam"}

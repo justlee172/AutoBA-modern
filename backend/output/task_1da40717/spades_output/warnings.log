@@ -1,0 +1,6 @@
+
+=== Error correction and assembling warnings:
+ * 0:00:07.904     1M / 282M  WARN    General                 (pair_info_count.cpp       : 358)   Unable to estimate insert size for paired library #0
+ * 0:00:07.912     1M / 282M  WARN    General                 (pair_info_count.cpp       : 364)   None of paired reads aligned properly. Please, check orientation of your read pairs.
+ * 0:00:07.919     1M / 282M  WARN    General                 (repeat_resolving.cpp      :  81)   Insert size was not estimated for any of the paired libraries, repeat resolution module will not run.
+======= Warnings saved to /workspace/output/task_1da40717/spades_output/warnings.log

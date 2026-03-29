@@ -1,0 +1,1 @@
+mamba install -y samtools && samtools bam2fq C:\Users\32181\.openclaw\workspace\autoba-modern\backend\output\task_fb38797a\marked_duplicates.bam > C:\Users\32181\.openclaw\workspace\autoba-modern\backend\output\task_fb38797a\marked_duplicates.fq

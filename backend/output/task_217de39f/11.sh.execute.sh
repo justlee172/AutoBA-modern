@@ -1,0 +1,1 @@
+spades.py -k 21,33,55,77 -1 /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_217de39f/data/SRR1234567_R1.fastq.gz -2 /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_217de39f/data/SRR1234567_R2.fastq.gz -o /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_217de39f

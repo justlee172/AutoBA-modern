@@ -1,0 +1,1 @@
+{"tool": "samtools", "code": "samtools sort /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_79bc6c5e/marked_duplicates.bam -o /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_79bc6c5e/sorted_marked_duplicates.bam"}

@@ -1,0 +1,1 @@
+samtools bam2fq D:\googledown\AutoBA-modern-main\AutoBA-modern-main\backend\output\task_a9d6bc97\marked_duplicates.bam > D:\googledown\AutoBA-modern-main\AutoBA-modern-main\backend\output\task_a9d6bc97\marked_duplicates.fq

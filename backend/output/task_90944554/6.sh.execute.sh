@@ -1,0 +1,1 @@
+picard MarkDuplicates I=/Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_90944554/sorted_alignments.bam O=/Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_90944554/marked_duplicates.bam M=/Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_90944554/duplicates.metrics

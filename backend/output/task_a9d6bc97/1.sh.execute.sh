@@ -1,0 +1,1 @@
+bowtie2-build D:\googledown\AutoBA-modern-main\AutoBA-modern-main\backend\output\task_a9d6bc97\data\Reference.fasta D:\googledown\AutoBA-modern-main\AutoBA-modern-main\backend\output\task_a9d6bc97\Reference_index

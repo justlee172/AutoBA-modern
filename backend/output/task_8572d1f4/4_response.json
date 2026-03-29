@@ -1,0 +1,1 @@
+{"tool": "samtools", "code": "samtools sort /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_8572d1f4/alignments.bam -o /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_8572d1f4/sorted_alignments.bam"}

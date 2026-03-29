@@ -1,0 +1,1 @@
+{"tool": "samtools", "code": "samtools sort D:\\googledown\\AutoBA-modern-main\\AutoBA-modern-main\\backend\\output\\task_c753c536\\marked_duplicates.bam -o D:\\googledown\\AutoBA-modern-main\\AutoBA-modern-main\\backend\\output\\task_c753c536\\sorted_marked_duplicates.bam"}

@@ -1,0 +1,1 @@
+{"tool": "SAMtools", "code": "samtools view -bS D:\\googledown\\AutoBA-modern-main\\AutoBA-modern-main\\backend\\output\\task_c753c536\\alignments.sam > D:\\googledown\\AutoBA-modern-main\\AutoBA-modern-main\\backend\\output\\task_c753c536\\alignments.bam"}

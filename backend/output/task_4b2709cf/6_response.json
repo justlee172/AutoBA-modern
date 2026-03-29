@@ -1,0 +1,1 @@
+{"tool": "Picard", "code": "picard MarkDuplicates I=/Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_4b2709cf/sorted_alignments.bam O=/Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_4b2709cf/marked_duplicates.bam M=/Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_4b2709cf/duplicates.metrics"}

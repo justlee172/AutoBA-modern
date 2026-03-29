@@ -1,0 +1,1 @@
+trimmomatic-0.39 PE -phred33 /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_8878c14a/marked_duplicates.fq /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_8878c14a/marked_duplicates.fq /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_8878c14a/data/TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36

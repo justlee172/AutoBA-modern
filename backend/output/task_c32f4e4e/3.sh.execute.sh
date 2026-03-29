@@ -1,0 +1,1 @@
+samtools view -bS 'C:/Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_c32f4e4e/output/alignment.sam' > 'C:/Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_c32f4e4e/output/alignment.bam'

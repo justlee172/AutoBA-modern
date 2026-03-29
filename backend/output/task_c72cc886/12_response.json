@@ -1,0 +1,1 @@
+{"tool": "bcftools", "code": "mamba install -y bcftools && bcftools annotate -x X,DP,SP,DP4,INFO/AD,INFO/ADF,INFO/ADR,INFO/PL C:\\Users\\32181\\.openclaw\\workspace\\autoba-modern\\backend\\output\\task_c72cc886\\variants.vcf > C:\\Users\\32181\\.openclaw\\workspace\\autoba-modern\\backend\\output\\task_c72cc886\\annotated_variants.vcf"}

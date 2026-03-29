@@ -1,0 +1,1 @@
+quast.py -o D:\googledown\AutoBA-modern-main\AutoBA-modern-main\backend\output\task_c753c536\assembly_report D:\googledown\AutoBA-modern-main\AutoBA-modern-main\backend\output\task_c753c536\contigs.fasta

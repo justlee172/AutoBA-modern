@@ -1,0 +1,9 @@
+- "left reads":
+  - "/workspace/output/task_1da40717/spades_output/corrected/marked_duplicates_R1.00.0_0.cor.fastq.gz"
+  "number": !!int "1"
+  "orientation": "fr"
+  "right reads":
+  - "/workspace/output/task_1da40717/spades_output/corrected/marked_duplicates_R2.00.0_0.cor.fastq.gz"
+  "single reads":
+  - "/workspace/output/task_1da40717/spades_output/corrected/marked_duplicates_R_unpaired.00.0_0.cor.fastq.gz"
+  "type": "paired-end"

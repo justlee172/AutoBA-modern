@@ -1,0 +1,1 @@
+mamba install -y spades && spades.py -k 21,33,55,77 --meta -1 'C:/Users/32181/.openclaw/workspace/autoba-modern/backend/output/task_56ff8285/output/R1.fastq' -2 'C:/Users/32181/.openclaw/workspace/autoba-modern/backend/output/task_56ff8285/output/R2.fastq' -o 'C:/Users/32181/.openclaw/workspace/autoba-modern/backend/output/task_56ff8285/output/spades_output'

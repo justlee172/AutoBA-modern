@@ -1,0 +1,1 @@
+samtools view -bS /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_8572d1f4/alignments.sam > /Users/32181/.openclaw/workspace/AutoBA-modern/backend/output/task_8572d1f4/alignments.bam

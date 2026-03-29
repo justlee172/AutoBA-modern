@@ -1,0 +1,1 @@
+{"tool": "mamba", "code": "mamba install -y bowtie2 && bowtie2-build C:\\Users\\32181\\.openclaw\\workspace\\autoba-modern\\backend\\output\\task_13ad9fbe\\data\\Reference.fasta C:\\Users\\32181\\.openclaw\\workspace\\autoba-modern\\backend\\output\\task_13ad9fbe\\Reference_index"}
